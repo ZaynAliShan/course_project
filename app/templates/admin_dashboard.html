@@ -1,0 +1,390 @@
+
+{% extends "adminbase.html" %}
+
+{% block app_content %}
+
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='Favicon.jpg')}}">
+
+<!-- carousel -->
+  <div class="banner carousel slide" id="recommended-item-carousel" data-ride="carousel">
+    <div class="slides carousel-inner">
+      <div class="item active">
+        <img src="{{url_for('static', filename='landpage/carousel/carousel_image1.jpg')}}" alt="" />
+        <div class="banner_caption">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="caption_inner animated fadeInUp">
+                  <h1>Hello, We are  LSQ SCRUM ACADEMY</h1>
+                  <p>We are passionate about business change. We help people improve the way they deliver projects and programmes.</p>
+                  <!-- insert_about_page_here -->                  
+                  
+                  <a href="{{ url_for('main.about') }}">Want to know more?</a>
+                </div><!--end caption_inner-->
+              </div>
+            </div><!--end row-->
+          </div><!--end container-->
+        </div><!--end banner_caption-->
+      </div>
+      <div class="item">
+        <img src="{{url_for('static', filename='landpage/carousel/carousel_image2.jpg')}}" alt="" />
+        <div class="banner_caption">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="caption_inner animated fadeInUp">
+                  <h1>Start Learning Now</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
+                  <!-- insert_apply_page_here -->                    
+                  
+                  <a href="{{ url_for('main.blog') }}">Apply Now</a>
+                </div><!--end caption_inner-->
+              </div>
+            </div><!--end row-->
+          </div><!--end container-->
+        </div><!--end banner_caption-->
+      </div>
+      <div class="item">
+        <img src="{{url_for('static', filename='landpage/carousel/carousel_image3.jpg')}}" alt="" />
+        <div class="banner_caption">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="caption_inner animated fadeInUp">
+                  <h1>Arrange a tour to our college</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur ante volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
+                  <!-- insert_contact_page_here -->                    
+                  
+                  <a href="{{ url_for('main.Contact') }}">Contact Us</a>
+                </div><!--end caption_inner-->
+              </div>
+            </div><!--end row-->
+          </div><!--end container-->
+        </div><!--end banner_caption-->
+      </div>
+      <div class="item">
+        <img src="{{url_for('static', filename='landpage/carousel/carousel_image3.jpg')}}" alt="" />
+        <div class="banner_caption">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="caption_inner animated fadeInUp">
+                  <h1>Find your dream course</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis. Mauris porta fermentum volutpat. Praesent est sapien, tincidunt vel arcu vitae, mattis sollicitudin lectus.</p>
+                  <!-- insert_courses_page_here -->                    
+                
+                  <a href="{{ url_for('main.courses') }}">Find  course</a>
+                  
+                </div><!--end caption_inner-->
+              </div>
+            </div><!--end row-->
+          </div><!--end container-->
+        </div><!--end banner_caption-->
+      </div>
+    </div>
+    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+      <img src="{{url_for('static', filename='landpage/carousel/prev.jpg')}}">
+      </a>
+    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+      <img src="{{url_for('static', filename='landpage/carousel/next.jpg')}}">
+    </a>
+  </div><!--end banner-->
+
+<!-- about -->
+  <div class="aboutArea">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-xs-12">
+          <div class="aboutTitle">
+            <h2>Approved Courses</h2>
+          </div><!-- aboutTitle -->
+        </div><!-- col-sm-3 col-xs-12 -->
+      </div><!-- row clearfix -->
+        <div class="about_inner clearfix">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <div class="aboutImage">
+              <a href="/courses">
+                <img src="{{url_for('static', filename='landpage/carousel/learn1.jpg')}}" alt="" class="img-responsive" />
+                <div class="overlay">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+                </div>
+                <span class="captionLink">Agile Project Management<span></span></span>
+              </a>
+            </div><!-- aboutImage -->
+          </div>
+            <div class="col-xs-6 col-sm-3">
+            <div class="aboutImage">
+              <!-- insert_course_page_here -->
+              <a href="/courses">
+                <img src="{{url_for('static', filename='landpage/carousel/Learn2.jpg')}}" alt="" class="img-responsive" />
+                <div class="overlay">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+                </div>
+                <span class="captionLink">Scrum<span></span></span>
+              </a>
+            </div><!-- aboutImage -->
+          </div>
+            <div class="col-xs-6 col-sm-3">
+            <div class="aboutImage">
+            <!-- insert_course_page_here -->
+              <a href="/courses">
+                <img src="{{url_for('static', filename='landpage/carousel/Learn3.jpg')}}" alt="" class="img-responsive" />
+                <div class="overlay">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+                </div>
+                <span class="captionLink">Agile Business Analysis<span></span></span>
+              </a>
+            </div><!-- aboutImage -->
+          </div>
+            <div class="col-xs-6 col-sm-3">
+            <div class="aboutImage">
+              <!-- insert_course_page_here -->
+              <a href="course3.html">
+                <img src="{{url_for('static', filename='landpage/carousel/Learn3.jpg')}}" alt="" class="img-responsive" />
+                <div class="overlay">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consectetur nte volutpat sem aliquam lobortis.</p>
+                </div>
+                <span class="captionLink">BCS Business Analysis<span></span></span>
+              </a>
+            </div><!-- aboutImage -->
+          </div>
+        </div><!-- row -->
+      </div><!-- about_inner -->
+      </div><!-- container -->
+  </div><!-- aboutArea -->
+
+<!-- main content -->
+  <div class="mainContent clearfix">
+
+  <!-- row 1 -->
+    <div class="container">
+      <div class="row clearfix">
+
+        <!-- video container -->
+          <div class="col-sm-8 col-xs-12">
+            <div class="videoNine clearfix">
+
+              <div class="videoArea clearfix">
+                <h3> Welcome to LSQ SCRUM ACADEMY</h3>
+                <div class="row">
+                  <div class="col-lg-8 col-md-7 col-xs-12 videoLeft">
+                  <img src="{{url_for('static', filename='landpage/carousel/video_image.jpg')}}" data-video="https://www.youtube.com/">
+                  </div><!-- videoLeft -->
+                  <div class="col-lg-4 col-md-5 col-xs-12 videoRight">
+                  
+                  <a href="About.html" class="btn btn-block learnBtn">Click here to learn more  </a>
+                  </div><!-- videoRight -->
+                </div><!-- row -->
+              </div><!-- videoArea -->
+            </div>
+          </div>
+
+        <!-- course finder form -->
+          <div class="col-sm-4 col-xs-12">
+            <div class="formArea clearfix">
+              <div class="formTitle">
+                <h3>Find your  Course</h3>
+                <h4>Online and Offline Traininng </h4>
+                <p>Agile Project Management, Scrum,Agile Business Analysis, and BCS Business Analysis are just a few of the training options available from LSQ Scrum Academy in the areas of Agile, Business Analysis, and Project Management. 
+
+                    If you'd like to learn more about our courses, use the pick box below..</p>
+              </div><!-- formTitle -->
+              <form action="#" method="post">
+                <div class="selectBox clearfix">
+                  <select name="guiest_id1" id="guiest_id1">
+                    <option value="0">Site</option>
+                    <option value="1">Luton,London</option>
+                    <option value="2">Glasgow, United KIngdon</option>
+                    <option value="3">Paris, Fance</option>
+                  </select>
+                </div><!-- selectBox -->
+                <div class="selectBox clearfix">
+                  <select name="guiest_id2" id="guiest_id2">
+                    <option value="0">Competency Levels</option>
+                    <option value="1">Beginner</option>
+                    <option value="2">Intermediate</option>
+                    <option value="3">Advance</option>
+                  </select>
+                </div><!-- selectBox -->
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Course Name">
+                </div>
+                <button type="submit" class="btn btn-default btn-block commonBtn">Search</button>
+              </form>
+            </div><!-- formArea -->
+          </div><!-- col-sm-4 col-xs-12 -->
+      </div><!-- row-->
+    </div><!-- container-->
+
+  <!-- row 2 -->
+    <div class="container">
+      <div class="row clearfix">
+
+        <!-- counter -->
+          <section id="counter" class="counter">
+              <div class="main_counter_area">
+                  <div class="overlay p-y-3">
+                      <div class="container">
+                          <div class="row">
+                              <div class="main_counter_content text-center white-text wow fadeInUp">
+                                  <div class="col-md-3">
+                                      <div class="single_counter p-y-2 m-t-1">
+                                          
+                                          <h2 class="statistic-counter">2001</h2>
+                                          <span></span>
+                                          <p>Established</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <div class="single_counter p-y-2 m-t-1">
+                                          
+                                          <h2 class="statistic-counter">5000</h2>
+                                          <p>Currently Enrolled</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <div class="single_counter p-y-2 m-t-1">
+                                          
+                                          <h2 class="statistic-counter">1221482</h2>
+                                          <p>Certifications</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <div class="single_counter p-y-2 m-t-1">
+                                          
+                                          <h2 class="statistic-counter">67225</h2>
+                                          <p>Courses</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section><!-- end counter -->
+
+      </div><!-- row -->
+    </div><!-- container -->
+
+  <!-- row 3 -->
+  <div class="container">
+    <div class="row clearfix">
+    </div><!-- row -->
+  </div><!-- container -->
+
+
+<section1>  <!-- Most Popular Items -->
+
+  <div class="container5">
+  <h1><b>Check out our most popular items!</b></h1>
+<p><b>Courses</b> Take a look at our most popular courses which are <a href="{{ url_for('main.courses') }}">Agile Project</a>
+<p><b>Events</b> Intersted in learning more about what we offer? Look for our most popular and upcoming <a href="{{ url_for('main.Events') }}">Events</a>
+<p><b>Reviews</b> Want to know what other users think of our website? Check out our <a href="{{ url_for('main.reviews') }}">Reviews</a> page as well as create one yourself!</p>
+
+</section1>
+
+
+
+<!-- Basics of Scrum -->
+<section2> 
+  
+  <div class="container1">
+  <h1><b>The Basics of Scrum</b></h1>
+<p>Scrum is simple light weighted agile project management methodology that enables product teams to build products in an iterative fashion through effective team collaboration. This is done by <b>Sprints.</b> A sprint is a short, time-boxed period when a scrum team works to complete a set amount of work i.e. a project.</p>  
+<p><b>What are the Scrum Roles?</b></p>
+<p>The scrum team is made up of three roles: A Product Owner, a Scrum Master and the Development Team:</p>
+<ul>
+<li><b>Product Owner</b></li>
+<p>A Product Owner in a scrum team decides what needs to be built. This person has complete knowledge about the market and business needs, has a vision.</p>
+<li><b>Scrum Master</b></li>
+<p>The Scrum Master is not a management title and cannot make decisions on behalf of the team. The Scrum Master's major responsibility is to ensure that the team stays on track. He should understand the different skill sets of his team and assign them to tasks which they are best at to ensure the product is delivered well and before the dealine. A Scrum Master should guide the team such that the team does not go astray.</p>
+<li><b>Development Team</b></li>
+<p>The Development team in scrum is the team that has all the skills necessary to execute the backlog items. With the help of their scrum masters, the team members shares their special skills and knowledge to try and fulfil the objective.</p>
+</ul>
+<p>Interested in learning more about Scrum Methadology? Take a look at our <a href="/courses">COURSES</a>.</p>
+  </div>
+</section2><!--end of basic of scrum -->
+
+
+
+
+
+
+
+
+
+  <section3>
+    <div id="frame">
+      <input type="radio" name="frame" id="frame1" checked />
+      <input type="radio" name="frame" id="frame2" />
+      <input type="radio" name="frame" id="frame3" />
+      <input type="radio" name="frame" id="frame4" />
+      <div id="slides">
+          <div id="overflow">
+              <div class="inner">
+                  <div class="frame frame_1">
+                      <div class="frame-content">
+                          <h2> Want To become a CSM?</h2> 
+                      </div>
+                  </div>
+                  <div class="frame frame_2">
+                      <div class="frame-content">
+                          <h2>CSM stands for Certified Scrum Master</h2>
+                          <p>Become certified to teach scrum in your organisation or advance on to become a certified scrum practitioner or trainer </p>
+                      </div>
+                  </div>
+                  <div class="frame frame_3">
+                      <div class="frame-content">
+                          <h2>Teach</h2>
+                           <p>learn how to guide your team in an agile method. improve leadership skills and influence organisrional change</p>
+
+                      </div>
+                  </div>
+                  <div class="frame frame_4">
+                      <div class="frame-content">
+                          <h2>learn how to guide your team in an agile method. improve leadership skills and influence organisrional change</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="controls">
+          <label for="frame1"></label>
+          <label for="frame2"></label>
+          <label for="frame3"></label>
+          <label for="frame4"></label>
+      </div>
+      <div id="bullets">
+          <label for="frame1"></label>
+          <label for="frame2"></label>
+          <label for="frame3"></label>
+          <label for="frame4"></label>
+      </div>
+  </div>
+</body>
+  
+</html>
+  </section3>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end main content -->
+
+
+
+{% endblock  %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSQ SCRUM ACADEMY | Contact-Us</title>
+    <link rel="stylesheet" href="static/css/Contact-us.css" />
+</head>
+<body>
+    <div class="contactUs">
+      <div class="title">
+        <h2>Get in Touch</h2>
+    </div>
+    </div class="box">
+        
+        <!-- info Box-->
+        <div class="contact info">
+            <h3>Contact Info</h3>
+            <div class="InfoBox">
+            <div>
+                <span><ion-icon name="location"></ion-icon></span>
+                <p>1 vicarge street, Luton <br>LU1 3HZ</p>
+            </div>
+            <div>
+                <span><ion-icon name="mail"></ion-icon></span>
+                <a href="mailto:SrumAcademy@gmail.com">SrumAcademy@gmail.com</a>
+            </div>
+            <div>
+                <span><ion-icon name="call"></ion-icon></span>
+                <a href="tel:020 8093 0219">020 8093 0219</a>
+            </div>
+            <!--Social Media Links-->
+            <ul class="sci">
+                <li><a href="https://www.facebook.com/profile.php?id=100087415161710"><ion-icon name="logo-facebook"></ion-icon></a><li>
+                <li><a href="https://twitter.com/CoursesLsq"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            </ul>
+        </div>
+    </div>
+
+        <!-- Map -->
+        <div class="contact map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5602.462817211019!2d-0.4103486256587932!3d51.878622673000486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487648413b85e739%3A0x65dba06ca1965eaf!2s1%20Vicarage%20St%2C%20Luton%20LU1%203HZ!5e0!3m2!1sen!2suk!4v1670175764340!5m2!1sen!2suk" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+{%  endblock %}

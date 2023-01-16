@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  {% import "bootstrap/wtf.html" as wtf %}
+</head>
+<body>
+  
+<div class="container">
+  <center>
+    <h1>Member Signup</h1>
+    <form class="form-signin" method="POST" action="/member_signup">
+      <h2 class="form-signin-heading">Sign Up</h2>
+      {{ form.hidden_tag() }}
+      {{ wtf.form_field(form.username) }}
+      {{ wtf.form_field(form.email) }}
+      {{ wtf.form_field(form.password) }}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    </form>
+    <a href="{{url_for('member_login')}}">Already have an account? Login</a>
+  </center>
+</div>
+
+</body>
+</html>

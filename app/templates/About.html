@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<link rel="stylesheet" href="static/css/about.css" />
+<link rel="shortcut icon" href="{{ url_for('static', filename='Favicon.jpg')}}">
+<section1>
+<div class="about-section">
+   <h1>About Us Page</h1>
+   <p>Some text about who we are and what we do.</p>
+   <p>Resize the browser window to see that this page is responsive by the way.</p>
+ </div>
+ 
+ <h2 style="text-align:center">Our Team</h2>
+ <div class="row">
+   <div class="column">
+     <div class="card">
+       <img src="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimg.freepik.com%2Ffree-vector%2Fteacher-standing-near-blackboard-holding-stick-isolated-flat-vector-illustration-cartoon-woman-character-near-chalkboard-pointing-alphabet_74855-8600.jpg%3Fw%3D1800%26t%3Dst%3D1670258811~exp%3D1670259411~hmac%3D9b682c43ce94f9510010d7a9d54cd2c8d4a6fe063a70120d8a7086d54af3704c&data=05%7C01%7CP2651337%40my365.dmu.ac.uk%7C650328bd675f46094bf708dad6e05e13%7C4f78c0e3d2504ddfbb1c15d3145697cc%7C1%7C0%7C638058556383030643%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=y0gt2Jp0ZiJ8XZhct%2F5uvKjifZLqzZDx%2BKwBU7ChQ4g%3D&reserved=0" alt="Jane" style="width:100%">
+       <div class="container">
+         <h2>Jane Doe</h2>
+         <div class="stars">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+         <p class="title">Scrum Trainer </p>
+         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+         <p>Jane@example.com</p>
+         <p><button class="button">Contact</button></p>
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="card">
+       <img src="" alt="Mike" style="width:100%">
+       <div class="container">
+         <h2>Mike Ross</h2>
+         <p class="title">Srum Master</p>
+         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+         <p>mike@example.com</p>
+         <p><button class="button">Contact</button></p>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="column">
+     <div class="card">
+       <img src="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fimg.freepik.com%2Ffree-vector%2Fteacher-standing-near-blackboard-holding-stick-isolated-flat-vector-illustration-cartoon-woman-character-near-chalkboard-pointing-alphabet_74855-8600.jpg%3Fw%3D1800%26t%3Dst%3D1670258811~exp%3D1670259411~hmac%3D9b682c43ce94f9510010d7a9d54cd2c8d4a6fe063a70120d8a7086d54af3704c&data=05%7C01%7CP2651337%40my365.dmu.ac.uk%7C650328bd675f46094bf708dad6e05e13%7C4f78c0e3d2504ddfbb1c15d3145697cc%7C1%7C0%7C638058556383030643%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=y0gt2Jp0ZiJ8XZhct%2F5uvKjifZLqzZDx%2BKwBU7ChQ4g%3D&reserved=0" alt="John" style="width:100%">
+       <div class="container">
+         <h2>John Doe</h2>
+         <p class="title">Designer</p>
+         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+         <p>john@example.com</p>
+         <p><button class="button">Contact</button></p>
+       </div>
+     </div>
+   </div>
+ </div>
+ </section1>
+
+
+ 
+
+
+
+  
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="static/js/about.js"></script>
+
+
+
+
+
+
+{% endblock %}

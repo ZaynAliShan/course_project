@@ -1,0 +1,193 @@
+{% extends "bootstrap/base.html" %}
+<html lang="en">
+
+{% block title %}
+    {{ title }} | LSQ SCRUM ACADEMY
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Favicon.jpg')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- js cdn -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- Google font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block navbar %}
+    <header class="header">
+        <nav class="megamenu navbar navbar-default navbar-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="index"><img src="{{ url_for('static', filename='images/logo.png')}}" alt="logo" class="img-responsive"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a class="active" href="{{ url_for('main.index') }}">Home</a></li>
+                        <li><a href="{{ url_for('main.about') }}">About </a></li>
+                        <li><a href="{{ url_for('main.courses') }}">Courses</a></li>
+                        <li><a href="{{ url_for('main.FAQ') }}">FAQ</a></li>
+                        <!-- <li><a href="{{ url_for('articles') }}">Articles</a></li> -->
+                        <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+
+                       <!--search bar right align-->
+                       <div class="search">
+                        <form action="#">
+                            <input type="type" placeholder="search courses" name="search">
+                            <button> <i class="fa fa-search" style="font: size 18px;"> </i></button>
+                        </form>
+                       </div>
+            
+
+                        
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if current_user.is_authenticated %}
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="glyphicon glyphicon-user"> </span> {{ current_user.username }}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url_for('auth.logout') }}" >Logout</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li><a href="{{ url_for('auth.login') }}" >Login</a></li>
+                            <li><a href="{{ url_for('auth.register') }}" >Register</a></li>
+                        {% endif %}
+                        </ul>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </a>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="row">
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+    <div class ="d-flex flex-column h-100">
+        </div>
+
+
+        <!--  footer -->
+
+    <footer class=" navbar-bottom">
+        <footer class="footer-bs">
+            <div class="row">
+                <div class="col-sm-4 footer-brand animated fadeInLeft">
+                    
+                    
+                </div>
+                <div class="col-sm-2 footer-nav animated fadeInUp">
+                    <h4>Links —</h4>
+                    <div class="col-sm-12">
+                        <ul class="list">
+                            <li><a href="{{ url_for('main.about') }}">About </a></li>
+                            <li><a href="/Contact-us">Contact-us</a></li>
+                            <li><a href="{{ url_for('main.FAQ') }}">FAQs</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="{{ url_for('main.news') }}">news</a></li>
+                            <li><a href="{{ url_for('main.Events') }}">Upcoming Events</a></li>
+                            <li><a href="{{ url_for('main.sponsor') }}">Business Sponsor</a></li>
+                            <li><a href="{{ url_for('main.reviews') }}">Review and comments</a></li>
+                            <li><a href="{{ url_for('main.Policy') }}">Privacy & Policy</a></li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2 footer-social animated fadeInDown">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100087415161710">Facebook</a></li>
+                        <li><a href="https://twitter.com/CoursesLsq">Twitter</a></li>
+                        
+                        <li><a href="#">RSS</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 footer-map animated fadeInDown"> 
+                </div>
+            </div>
+            <p>© LSQ SCRUM ACADEMY , All rights reserved</p>
+        </footer>
+    
+</div>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+    <script type="text/javascript">
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 3000);
+    </script>
+    <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+        scrollTop: $(hash).offset().top
+        }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+            });
+        } // End if
+    });
+})
+</script>
+{% endblock %}

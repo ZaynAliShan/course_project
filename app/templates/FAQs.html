@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/FAQ.css">
+  <title>Manage FAQs</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg" style="background: #212529;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="{{url_for('articles')}}">Articles</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" href="{{ url_for('add_article') }}">Add Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">Show Current Articles</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1 class="faq-heading">Frequently Asked Questions</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+
+                <!-- faq question -->
+                <h1 class="faq-page">What is online learning like?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>For those who have never encountered online learning, the biggest question is often what it is actually like. The caveat, as you know, is that online learning comes in several forms. Therefore, this is your chance to explain that to people. Point out that there are different types of online courses and programs, and that they’ll have to decide which is best for them. Then, explain the types of courses you offer and how your online programs work to give them all the information they need. This not only gives them information, but it increases their trust because you’re being transparent and giving them straightforward answers. 
+
+                        !</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-two">
+
+                <!-- faq question -->
+                <h1 class="faq-page">Are you accredited or licensed by educational organizations?</h1>
+
+                <!-- faq answer -->
+
+                <div class="faq-body">
+                    <p>!There is not always a need for licensing or accreditation for online courses. However, some programs do require it. Either way, people will usually ask what type of training or background you have, as well as any licensing that is  available if that is relevant. Make sure that you answer this question by telling them if you do hold any licenses or accreditation, as well as by explaining whether or not those are needed, and why. It gives them the confidence that you have the right experience and boosts your credibility because you’re offering additional information for the sake of education alone. </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+
+            <div class="faq-three">
+
+                <!-- faq question -->
+<h1 class="faq-page">What are the requirements to take the courses or sign up with your website?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>People will want to know how to get started. You can link them to the pages on your website that help them through that process, but you’ll also want to take the time to explain it to them here. If you have certain enrollment windows, for example, list those. If payment or deposits are required, explain that, as well. Make sure that people know exactly what they need to do to take online courses from you, no matter what those courses might be. </p>
+                </div>
+            </div>
+
+
+            <hr class="hr-line">
+
+            <div class="faq-four">
+
+                <!-- faq question -->
+<h1 class="faq-page">Are  face to face classes available ?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>People will want to know how to get started. You can link them to the pages on your website that help them through that process, but you’ll also want to take the time to explain it to them here. If you have certain enrollment windows, for example, list those. If payment or deposits are required, explain that, as well. Make sure that people know exactly what they need to do to take online courses from you, no matter what those courses might be. </p>
+                </div>
+            </div>
+
+            <hr class="hr-line">
+            <div class="faq-five">
+
+                <!-- faq question -->
+<h1 class="faq-page">What are the requirements to take the courses or sign up with your website?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>People will want to know how to get started. You can link them to the pages on your website that help them through that process, but you’ll also want to take the time to explain it to them here. If you have certain enrollment windows, for example, list those. If payment or deposits are required, explain that, as well. Make sure that people know exactly what they need to do to take online courses from you, no matter what those courses might be. </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="../static/js/FAQ.js  "></script>
+</body>
+</html>
