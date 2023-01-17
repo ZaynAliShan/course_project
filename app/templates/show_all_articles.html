@@ -22,20 +22,21 @@
             <a class="nav-link text-white" aria-current="page" href="{{ url_for('add_article') }}">Add Article</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">Show Current Articles</a>
+            <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">See Current Articles</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="{{ url_for('faqs') }}">Manage FAQs</a>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a> -->
+            <a class="nav-link text-white" href="{{url_for('announcement')}}">Put Announcements</a>
           </li>
         </ul>
         <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a>
       </div>
     </div>
   </nav>
-  <center><h2 class="py-2">These are the Articles Currently Available for users</h2></center>
+
+  <center><h2 class="py-2">Articles Available for you</h2></center>
   <div class="container py-4 over">
      {% for article in articles %}
        <hr>

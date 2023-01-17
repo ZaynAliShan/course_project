@@ -1,5 +1,5 @@
 from app import create_app
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
@@ -35,6 +35,17 @@ class Content(db.Model):
     title = db.Column(db.String(100), nullable=False)
     body = db.Column(db.Text, nullable=False)
 
+# FAQs (FAQs Schema)
+class FAQs(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    question = db.Column(db.String(100), nullable=False)
+    answer = db.Column(db.Text, nullable=False)
+
+class announcements(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    body = db.Column(db.Text, nullable=False)
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -53,6 +64,47 @@ class RegisterForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
 
+
+@app.route("/announcement", methods=['GET','POST'])
+def announcement():
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        new_announcement = announcements(title=title, body=body)
+        db.session.add(new_announcement)
+        db.session.commit()
+        return render_template("announcements.html", msg = "Announcement has been added successfully!")
+    return render_template("announcements.html")
+
+
+@app.route("/add_faq", methods=['GET','POST'])
+def add_faq():
+    if request.method == 'POST':
+        question = request.form['question']
+        answer = request.form['answer']
+        new_faq = FAQs(question=question, answer=answer)
+        db.session.add(new_faq)
+        db.session.commit()
+        return render_template("add_faq.html", msg="FAQ Added Successfully")
+    return render_template("add_faq.html")
+
+
+@app.route("/delete_faq", methods = ['POST'])
+def delete_faq():
+    id = request.get_json()
+    print(id["id"])
+    deletion_id = id["id"]
+    deletion_faq = FAQs.query.get(deletion_id)
+    db.session.delete(deletion_faq)
+    db.session.commit()
+    return render_template('FAQs.html')
+
+
+
+@app.route("/show_announcements")
+def show_announcements():
+    data = announcements.query.all()
+    return render_template("show_announcements.html", data=data)
 
 @app.route("/articles")
 def articles():
@@ -82,9 +134,10 @@ def add_content():
 @app.route("/admin_login", methods=['GET', 'POST'])
 def admin_login():
         form = LoginForm()
-
+        session['username'] = form.username.data
         # check if form was submitted
         if form.validate_on_submit():
+            
             user = Admins.query.filter_by(username=form.username.data).first() # check if user exisits in database
             if user:
                 if check_password_hash(user.password, form.password.data): #check if password matches
@@ -95,14 +148,21 @@ def admin_login():
             return '<h1>Invalid username or password</h1>'
         return render_template("admin_login.html" ,form = form)
 
+
 @app.route("/show_articles_forUser")
 def show_articles_forUser():
     articles = Content.query.all()
     return render_template("show_articles_forUser.html", articles = articles)
 
+@app.route("/user_faqs")
+def user_faqs():
+    faqs = FAQs.query.all()
+    return render_template("user_faqs.html", faqs = faqs)
+
 @app.route("/faqs")
 def faqs():
-    return render_template("FAQs.html")
+    faqs = FAQs.query.all()
+    return render_template("FAQs.html", faqs = faqs)
 
 
 @app.route("/admin_dashboard")
@@ -114,6 +174,7 @@ def admin_dashboard():
 @login_required
 def logout():
     logout_user()
+    session.pop('username',None)
     return redirect(url_for('main.index'))
 
 if __name__ == "__main__":

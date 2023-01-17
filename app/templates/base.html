@@ -43,14 +43,16 @@
                         <li><a href="{{ url_for('main.courses') }}">Courses</a></li>
                         <li><a href="{{ url_for('main.FAQ') }}">FAQ</a></li>
                         <!-- <li><a href="{{ url_for('articles') }}">Articles</a></li> -->
-                        <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
                         <li><a href="{{ url_for('show_articles_forUser') }}">Articles</a></li>
+                        <li><a href="{{ url_for('user_faqs') }}">FAQs</a></li>
+                        <li><a href="{{ url_for('show_announcements') }}">Announcements</a></li>
+                        <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
 
                        <!--search bar right align-->
                        <div class="search">
                         <form action="#">
                             <input type="type" placeholder="search courses" name="search">
-                            <button> <i class="fa fa-search" style="font: size 18px;"> </i></button>
+                            <button> <i class="fa fa-search" style="font: size 18px;"></i>Search</button>
                         </form>
                        </div>
             

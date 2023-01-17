@@ -11,18 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles</title>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/FAQ.css">
+    <link rel="stylesheet" href="static/css/FAQ.css">
 
 </head>
 
 <body>
 
-  <center><h2 class="py-2 bg-success">These are the Articles Currently Available for users</h2></center>
+  <center><h2 class="py-2 bg-success">Announcements</h2></center>
   <div class="container py-4 over">
-      {% for article in articles %}
+      {% for d in data %}
         <hr>
-        <h2 style="text-align: justify;">Article: {{ article.title }}</h2>
-        <p style="text-align: justify;">{{ article.body }}</p>
+        <h2 style="text-align: justify;">Title: {{ d.title }}</h2>
+        <p style="text-align: justify;">{{ d.body }}</p>
         <hr>
       {% endfor %}
   </div>

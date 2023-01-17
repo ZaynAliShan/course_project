@@ -22,13 +22,13 @@
             <a class="nav-link text-white" aria-current="page" href="{{ url_for('add_article') }}">Add Article</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">Show Current Articles</a>
+            <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">See Current Articles</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="{{ url_for('faqs') }}">Manage FAQs</a>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a> -->
+            <a class="nav-link text-white" href="{{url_for('announcement')}}">Put Announcements</a>
           </li>
         </ul>
         <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a>
@@ -62,17 +62,26 @@
     </div>
   </div>
 
-    <!-- Section for managing FAQs -->
 
-  <center><h1 class="py-3">Manage FAQs Section</h1></center>
+
   <div class="container py-5">
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Manage FAQs</h5>
-            <p class="card-text">Add, Update, Delete and See (Current) FAQs here</p>
-            <a href="{{ url_for('faqs') }}" class="btn btn-primary">Manage</a>
+            <p class="card-text">Manage your FAQs by clicking the button below:</p>
+            <!-- <a href="{{url_for('add_faq')}}" class="btn btn-primary">Add FAQs</a> -->
+            <a href="{{ url_for('faqs') }}" class="btn btn-primary">Manage FAQS</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Manage Announcements</h5>
+            <p class="card-text">Put Announcements by clicking the button below</p>
+            <a href="{{url_for('announcement')}}" class="btn btn-primary">Put Announcements</a>
           </div>
         </div>
       </div>
