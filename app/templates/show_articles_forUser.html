@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/FAQ.css">
+
+</head>
+
+<body>
+
+  <center><h2 class="py-2">These are the Articles Currently Available for users</h2></center>
+  <div class="container py-4 over">
+      {% for article in articles %}
+        <hr>
+        <h2 style="text-align: justify;">Article: {{ article.title }}</h2>
+        <p style="text-align: justify;">{{ article.body }}</p>
+        <hr>
+      {% endfor %}
+  </div>
+
+</body>
+
+
+</html>
+{% endblock %}

@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar navbar-expand-lg" style="background: #212529;">
     <div class="container-fluid">
-      <a class="navbar-brand text-white" href="{{url_for('articles')}}">Articles</a>
+      <a class="navbar-brand text-white" href="{{url_for('articles')}}">Admin Panel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,7 +26,14 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="{{url_for('show_all_articles')}}">Show Current Articles</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{{ url_for('faqs') }}">Manage FAQs</a>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a> -->
+          </li>
         </ul>
+        <a class="nav-link text-white" href="{{ url_for('logout') }}"><button type="btn" class="btn btn-primary">Logout</button></a>
       </div>
     </div>
   </nav>
@@ -35,11 +42,12 @@
   <h5 class="text-center hide_me" >{{ msg }}</h5>
   <div class="container text-center py-5">
     <form method="post" action="{{ url_for('add_content') }}">
-      <!-- <label for="title">Title:</label> -->
-      <input type="text" id="title" name="title" placeholder="Title of Article"><br><br>
-      <!-- <label for="body">Body:</label> -->
-      <textarea id="body" name="body" placeholder="Content of Article"></textarea><br>
-      <input type="submit" value="Add Content">
+      <label class="h4" for="title">Title of Article:</label><br><br> 
+      <input class="form-control" type="text" id="title" name="title" placeholder="Title of Article" required><br><br>
+      <label class="h4" for="body">Content of Article:</label><br><br> 
+      <textarea required class="form-control" id="body" name="body" placeholder="Content of Article" rows="5"></textarea>
+      <br>
+      <input class="btn btn-primary" type="submit" value="Add Article">
     </form>
   </div>
 

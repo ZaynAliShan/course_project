@@ -56,7 +56,7 @@ class RegisterForm(FlaskForm):
 
 @app.route("/articles")
 def articles():
-    return render_template("articles.html")
+    return render_template("admin_panel.html")
 
 @app.route("/add_article")
 def add_article():
@@ -64,10 +64,7 @@ def add_article():
 
 @app.route("/show_all_articles")
 def show_all_articles():
-
     articles = Content.query.all()
-    print("Articles Fetched are: ", articles)
-
     return render_template("show_all_articles.html", articles = articles)
 
 
@@ -96,8 +93,12 @@ def admin_login():
 
             # incase username or password doesn't exist
             return '<h1>Invalid username or password</h1>'
-        return render_template("member_login.html" ,form = form)
+        return render_template("admin_login.html" ,form = form)
 
+@app.route("/show_articles_forUser")
+def show_articles_forUser():
+    articles = Content.query.all()
+    return render_template("show_articles_forUser.html", articles = articles)
 
 @app.route("/faqs")
 def faqs():
@@ -107,13 +108,13 @@ def faqs():
 @app.route("/admin_dashboard")
 @login_required
 def admin_dashboard():
-    return render_template("admin_dashboard.html", name= current_user.username.title())
+    return render_template("admin_panel.html")
 
-# @app.route("/logout_member")
-# @login_required
-# def logout_member():
-#     logout_user()
-#     return redirect(url_for('main.index'))
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=3000)
